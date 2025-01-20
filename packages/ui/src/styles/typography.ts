@@ -52,3 +52,21 @@ export const fontColorStyles = createStyles((t) => ({
   brand: { base: { color: t.colors.text.brand } },
   invert: { base: { color: t.colors.text.invert } },
 }));
+
+export const PaymiumTypographyStyles = createStyles(() => ({
+  headlineXL: { base: { fontSize: 32, lineHeight: 32, fontWeight: '900' } },
+  headlineL: { base: { fontSize: 24, lineHeight: 32, fontWeight: '800' } },
+  headlineM: { base: { fontSize: 18, lineHeight: 24, fontWeight: '700' } },
+  standard: {
+    base: { fontSize: 14, lineHeight: 24, fontWeight: '400' },
+    media: { md: { fontSize: 16, lineHeight: 24 } },
+  },
+  medium: {
+    base: { fontSize: 11, lineHeight: 16, fontWeight: '400' },
+    media: { md: { fontSize: 14, lineHeight: 20 } },
+  },
+  small: {
+    base: { fontSize: 11, lineHeight: 16, fontWeight: '400' },
+    media: { md: { fontSize: 12, lineHeight: 16 } },
+  },
+}));
