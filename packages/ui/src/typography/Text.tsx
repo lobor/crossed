@@ -21,6 +21,7 @@ import {
   fontWeightStyles,
   fontSizeStyles,
   fontColorStyles,
+  PaymiumTypographyStyles,
 } from '../styles/typography';
 import { textAlignStyles } from '../styles/textAlign';
 import { memo } from 'react';
@@ -64,6 +65,16 @@ export interface TextProps extends Omit<TextNativeProps, 'style'> {
    * Element ref
    */
   ref?: React.Ref<TextNative> | undefined;
+
+  /**
+   * select weight of 600
+   */
+  semiBold?: boolean;
+
+  /**
+   * select a variant
+   */
+  variant?: keyof typeof PaymiumTypographyStyles;
 }
 
 const Text = memo<TextProps>(
@@ -74,6 +85,8 @@ const Text = memo<TextProps>(
       textAlign,
       size = 'md',
       style,
+      variant = 'standard',
+      semiBold = false,
       ...props
     }) => {
       return (
@@ -86,6 +99,8 @@ const Text = memo<TextProps>(
             fontWeightStyles[weight],
             useText.root,
             fontColorStyles[color],
+            variant && PaymiumTypographyStyles[variant],
+            semiBold && fontWeightStyles.lg,
             style
           ).rnw()}
         />
